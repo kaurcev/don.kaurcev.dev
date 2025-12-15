@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "font";
+  src: url("./fonts/font.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+:root {
+  --ui-font-size: 16px;
+  --ui-color: #121212;
+  --ui-akc-color: #fff;
+  --ui-akc-color-gray: #808080;
+  --ui-akc-akcent: #009900;
+  --ui-akc-akcent-hover: #00c900;
+  --ui-red: #dc143c;
+  --ui-red-hover: #f03c60;
+  --ui-bg-color: #f2f4f8;
+  --ui-padding: 10px;
+  --ui-marg-center: 0 auto;
+  --ui-max-width: 1900px;
+  --ui-border-rad: 10px;
+  --ui-padding-inp: var(--ui-border-rad) var(--ui-padding);
+  --ui-border-rad-out: calc(var(--ui-padding) + var(--ui-border-rad));
+  --ui-shadow: 0 4px 10px 0 #3a529b0e;
+  --ui-max-height: 80dvh;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ui-bg-color: #222222;
+    --ui-color: #ffffff;
+    --ui-akc-color: #212121;
+    --ui-akc-color-gray: #808080;
+    --ui-akc-akcent: #b4b4b4;
+    --ui-akc-akcent-hover: #e2e2e2;
+    --ui-red: #dc143c;
+    --ui-red-hover: #f03c60;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+  font-family: "font";
+  transition: background-color 0.1s ease-in-out, color 0.05s ease-in-out;
+}
+
+html,
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: var(--ui-font-size);
+  background-color: var(--ui-bg-color);
+  color: var(--ui-color);
+}
+
+main {
+  padding: var(--ui-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-padding);
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+
+button {
+  padding: var(--ui-padding-inp);
+  border-radius: var(--ui-border-rad);
+  border: 1px solid transparent;
+  background-color: var(--ui-akc-akcent);
+  color: var(--ui-akc-color);
+  font-size: var(--ui-font-size);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--ui-akc-akcent-hover);
+}
+
+a {
+  color: var(--ui-akc-akcent);
+  text-decoration: none;
+}
+
+p {
+  margin: 0px;
+}
+
+p.mini {
+  font-size: 0.7rem;
+  color: var(--ui-akc-color-gray);
+}
+
+.footer {
+  position: fixed;
+  bottom: var(--ui-padding);
+  padding: var(--ui-padding);
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  gap: var(--ui-padding);
+}
+
+label {
+  color: #000;
+}
