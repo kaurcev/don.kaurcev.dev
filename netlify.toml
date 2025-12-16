@@ -1,8 +1,13 @@
 [build]
-  publish = "build"  
+  publish = "build"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  force = false 
+  condition = "isNotFile"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    cache-control = "public, max-age=3600"
